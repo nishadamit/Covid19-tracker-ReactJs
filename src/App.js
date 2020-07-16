@@ -1,26 +1,66 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import GlobalChart from './Components/GlobalChart';
+import GlobalCard from './Components/GlobalCard';
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+         globalchartdata:{
+            chart: {
+              type: 'column'
+            },
+            title: {
+              text: 'COVID-19 GLOBAL'
+            },
+            plotOptions: {
+              column: {
+                  colorByPoint: true
+              }
+          },
+            series: [
+              {
+                data: [10000, 20000, 1000]
+              }
+            ]
+            ,
+            colors: ['#77a1e5','#a6c96a','#c42525']
+          }
+          // '#77a1e5'
+
+    }
 }
 
-export default App;
+
+
+componentDidMount(){
+
+  axios.get('https://disease.sh/v3/covid-19/all')
+        .then((Response)=>{
+             const { cases,recovered,deaths } = Response.data
+             const data = [ cases,recovered,deaths]
+
+             this.setState({globalchartdata:{...this.state.globalchartdata,series:[{data:[...data]}]}})
+        })
+      }
+
+  render() {
+
+    // console.log("app state",this.state.globalchartdata.series[0].data)
+
+    return (
+      <div>
+        <h1>Covid-19</h1>
+        <GlobalCard data={this.state.globalchartdata.series[0].data} />
+        <GlobalChart chartdata={this.state.globalchartdata} />
+      </div>
+    )
+  }
+}
+
+export default App
