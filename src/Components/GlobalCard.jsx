@@ -19,6 +19,7 @@ function GlobalCard(props) {
                                   <p style={{fontSize:"25px",fontWeight:"bold"}} >{new Intl.NumberFormat().format(props.data[0])}</p>
                                   <p>{GetDate()}</p>
                                   <p>Number of active cases of COVID-19</p>   
+                                  <p style={{fontWeight:"bold",fontSize:"1.3rem"}} >{props.country}</p>
                                </Card.Content>
                                <Card.Content style={{padding:"0px"}} >
                                    <div style={{backgroundColor:"#6495ED",color:"#6495ED"}} >hello</div>
@@ -32,6 +33,7 @@ function GlobalCard(props) {
                                   <p style={{fontSize:"25px",fontWeight:"bold"}} >{new Intl.NumberFormat().format(props.data[1])}</p>
                                   <p>{GetDate()}</p>
                                   <p>Number of active cases of COVID-19</p>   
+                                  <p style={{fontWeight:"bold",fontSize:"1.3rem"}} >{props.country}</p>
                                </Card.Content>
                                <Card.Content style={{padding:"0px"}} >
                                    <div style={{backgroundColor:"#a6c96a",color:"#a6c96a"}} >hello</div>
@@ -45,6 +47,7 @@ function GlobalCard(props) {
                                    <p style={{fontSize:"25px",fontWeight:"bold"}} >{new Intl.NumberFormat().format(props.data[2])}</p>
                                    <p>{GetDate()}</p>
                                   <p>Number of active cases of COVID-19</p>   
+                                  <p style={{fontWeight:"bold",fontSize:"1.3rem"}} >{props.country}</p>
                                </Card.Content>
                                <Card.Content style={{padding:"0px"}} >
                                    <div style={{backgroundColor:"#c42525",color:"#c42525"}} >hello</div>

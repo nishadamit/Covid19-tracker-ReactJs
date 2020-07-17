@@ -93,7 +93,7 @@ axios.get('https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RK
                 }
 
             }else if(a >= 0 && b <= 4){
-                console.log("object")
+                // console.log("object")
                 if(gender == 'M')
                 {
                     chartdata[0].male++

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import { Container, Button,Grid ,Form,Header,Card} from 'semantic-ui-react';
-import axios from 'axios';
+import { Container} from 'semantic-ui-react';
 
 
 class GlobalChart extends Component {

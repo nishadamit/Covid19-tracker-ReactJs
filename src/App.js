@@ -5,6 +5,8 @@ import GlobalCard from './Components/GlobalCard';
 import GenderAndAgeChart from './Components/GenderAndAgeChart';
 import FederalStateChart from './Components/FederalStateChart';
 import axios from 'axios';
+import {countries} from './config/config';
+import { Dropdown} from 'semantic-ui-react';
 
 class App extends Component {
 
@@ -32,17 +34,32 @@ class App extends Component {
             ]
             ,
             colors: ['#77a1e5','#a6c96a','#c42525']
-          }
+          },
+          Country:"Germany"
           // '#77a1e5'
 
     }
 }
 
+ onChangeCountryName = (e,data) =>{
+      //  console.log("data",e,data.value)
+
+       axios.get(`https://disease.sh/v3/covid-19/countries/${data.value}`)
+       .then((Response) =>{
+            // console.log("response",Response.data.country)
+            const { cases,recovered,deaths } = Response.data
+            const data = [ cases,recovered,deaths]
+
+            // console.log("e data",data.value)
+
+            this.setState({globalchartdata:{...this.state.globalchartdata,series:[{data:[...data]}]},Country:Response.data.country})
+       })
+}
 
 
 componentDidMount(){
 
-  axios.get('https://disease.sh/v3/covid-19/all')
+  axios.get('https://disease.sh/v3/covid-19/countries/germany')
         .then((Response)=>{
              const { cases,recovered,deaths } = Response.data
              const data = [ cases,recovered,deaths]
@@ -58,7 +75,15 @@ componentDidMount(){
     return (
       <div>
         <h1>Covid-19</h1>
-        <GlobalCard data={this.state.globalchartdata.series[0].data} />
+        <Dropdown
+            placeholder='Germany'
+            fluid
+            search
+            selection
+            options={countries}
+            onChange={this.onChangeCountryName}
+          />
+        <GlobalCard data={this.state.globalchartdata.series[0].data} country={this.state.Country} />
         <GlobalChart chartdata={this.state.globalchartdata} />
         <GenderAndAgeChart />
         {/* <FederalStateChart/> */}

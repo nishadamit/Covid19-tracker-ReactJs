@@ -17,6 +17,7 @@ body{
 .ui.grid>.row>.column{
     margin-bottom: 1% !important;
 }
-.ui.card>.content, .ui.cards>.card>.content{
-
+.ui.fluid.dropdown {
+     width: 20% !important;
+     margin-left: 40%;
 }
