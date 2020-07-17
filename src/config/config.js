@@ -254,6 +254,7 @@ export const countries = [
     value: 'United Kingdom'
   },
   { key: 'Uruguay', text: 'Uruguay', value: 'Uruguay' },
+  { key: 'USA', text: 'USA', value: 'USA' },
   { key: 'Uzbekistan', text: 'Uzbekistan', value: 'Uzbekistan' },
   { key: 'Venezuela', text: 'Venezuela', value: 'Venezuela' },
   { key: 'Vietnam', text: 'Vietnam', value: 'Vietnam' },

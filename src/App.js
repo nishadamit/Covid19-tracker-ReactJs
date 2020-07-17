@@ -20,7 +20,7 @@ class App extends Component {
               type: 'column'
             },
             title: {
-              text: 'COVID-19 GLOBAL'
+              text: "Germany"
             },
             plotOptions: {
               column: {
@@ -52,7 +52,7 @@ class App extends Component {
 
             // console.log("e data",data.value)
 
-            this.setState({globalchartdata:{...this.state.globalchartdata,series:[{data:[...data]}]},Country:Response.data.country})
+            this.setState({globalchartdata:{...this.state.globalchartdata,series:[{data:[...data]}],title:{text:Response.data.country}},Country:Response.data.country})
        })
 }
 
@@ -84,7 +84,7 @@ componentDidMount(){
             onChange={this.onChangeCountryName}
           />
         <GlobalCard data={this.state.globalchartdata.series[0].data} country={this.state.Country} />
-        <GlobalChart chartdata={this.state.globalchartdata} />
+        <GlobalChart chartdata={this.state.globalchartdata} country={this.state.Country} />
         <GenderAndAgeChart />
         {/* <FederalStateChart/> */}
       </div>
