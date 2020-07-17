@@ -15,6 +15,7 @@ class GlobalChart extends Component {
         return (
             <Container>
                 <HighchartsReact highcharts={Highcharts} options={this.props.chartdata} />
+                <hr/>
             </Container>
         )
     }

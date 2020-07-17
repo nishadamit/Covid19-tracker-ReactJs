@@ -4,7 +4,7 @@ import HighchartsReact from 'highcharts-react-official';
 import axios from 'axios';
 
 
-import { Container, Button,Grid ,Form,Header,Card} from 'semantic-ui-react';
+import { Container} from 'semantic-ui-react';
 
 export class GenderAndAgeChart extends Component {
 
@@ -119,7 +119,7 @@ axios.get('https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RK
 
      })
      .then((response) =>{
-         console.log("response",response)
+        //  console.log("response",response)
          this.setState({chartdata:{...this.state.chartdata,series:[{data:[...response[0]]},{data:[...response[1]]}]}})
 
      })
@@ -194,6 +194,7 @@ axios.get('https://services7.arcgis.com/mOBPykOjAyBO2ZKk/arcgis/rest/services/RK
         return (
             <Container>
                 <HighchartsReact highcharts={Highcharts} options={this.state.chartdata} />
+                <hr/>
             </Container>
         )
     }

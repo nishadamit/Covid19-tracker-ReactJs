@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import GlobalChart from './Components/GlobalChart';
 import GlobalCard from './Components/GlobalCard';
-import GenderAndAgeChart from './Components/GenderAndAgeChart'
+import GenderAndAgeChart from './Components/GenderAndAgeChart';
+import FederalStateChart from './Components/FederalStateChart';
 import axios from 'axios';
 
 class App extends Component {
@@ -60,6 +61,7 @@ componentDidMount(){
         <GlobalCard data={this.state.globalchartdata.series[0].data} />
         <GlobalChart chartdata={this.state.globalchartdata} />
         <GenderAndAgeChart />
+        {/* <FederalStateChart/> */}
       </div>
     )
   }
