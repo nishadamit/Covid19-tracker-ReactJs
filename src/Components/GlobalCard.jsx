@@ -12,7 +12,7 @@ function GlobalCard(props) {
         <Container className="global-card" >
             <Grid >
                 <Grid.Row className="global-card-alignment" >
-                      <Grid.Column mobile={16} largeScreen={3} >
+                      <Grid.Column mobile={8} largeScreen={5} >
                              <Card fluid >
                               <Card.Content>
                                   <p>Infected</p>
@@ -26,13 +26,13 @@ function GlobalCard(props) {
                                </Card.Content>
                              </Card>
                       </Grid.Column>
-                      <Grid.Column  mobile={16} largeScreen={3} >
+                      <Grid.Column  mobile={8} largeScreen={5} >
                       <Card fluid >
                               <Card.Content>
                                   <p>Recovered</p>
                                   <p style={{fontSize:"25px",fontWeight:"bold"}} >{new Intl.NumberFormat().format(props.data[1])}</p>
                                   <p>{GetDate()}</p>
-                                  <p>Number of active cases of COVID-19</p>   
+                                  <p>Number of Recovered cases of COVID-19</p>   
                                   <p style={{fontWeight:"bold",fontSize:"1.3rem"}} >{props.country}</p>
                                </Card.Content>
                                <Card.Content style={{padding:"0px"}} >
@@ -40,13 +40,13 @@ function GlobalCard(props) {
                                </Card.Content>
                              </Card>
                       </Grid.Column>
-                      <Grid.Column mobile={16} largeScreen={3} >
+                      <Grid.Column mobile={8} largeScreen={5} >
                       <Card fluid >
                               <Card.Content>
                                   <p>Death</p>
                                    <p style={{fontSize:"25px",fontWeight:"bold"}} >{new Intl.NumberFormat().format(props.data[2])}</p>
                                    <p>{GetDate()}</p>
-                                  <p>Number of active cases of COVID-19</p>   
+                                  <p>Number of deaths due to COVID-19</p>   
                                   <p style={{fontWeight:"bold",fontSize:"1.3rem"}} >{props.country}</p>
                                </Card.Content>
                                <Card.Content style={{padding:"0px"}} >

@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import GlobalChart from './Components/GlobalChart';
 import GlobalCard from './Components/GlobalCard';
-import GenderAndAgeChart from './Components/GenderAndAgeChart';
-import FederalStateChart from './Components/FederalStateChart';
 import axios from 'axios';
 import {countries} from './config/config';
 import { Dropdown} from 'semantic-ui-react';
@@ -74,7 +72,8 @@ componentDidMount(){
 
     return (
       <div>
-        <h1>Covid-19</h1>
+        <img src="https://i.ibb.co/7QpKsCX/image.png" />
+        <GlobalCard data={this.state.globalchartdata.series[0].data} country={this.state.Country} />
         <Dropdown
             placeholder='Germany'
             fluid
@@ -83,10 +82,7 @@ componentDidMount(){
             options={countries}
             onChange={this.onChangeCountryName}
           />
-        <GlobalCard data={this.state.globalchartdata.series[0].data} country={this.state.Country} />
         <GlobalChart chartdata={this.state.globalchartdata} country={this.state.Country} />
-        <GenderAndAgeChart />
-        {/* <FederalStateChart/> */}
       </div>
     )
   }
