@@ -8,11 +8,10 @@ class GlobalChart extends Component {
 
 
     render() {
-
     //   console.log("props",this.props)
 
         return (
-            <Container>
+            <Container style={{marginTop:"1.5%"}} >
                 <HighchartsReact highcharts={Highcharts} options={this.props.chartdata} />
                 <hr/>
             </Container>

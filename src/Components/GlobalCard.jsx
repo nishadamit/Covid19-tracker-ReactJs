@@ -12,7 +12,7 @@ function GlobalCard(props) {
         <Container className="global-card" >
             <Grid >
                 <Grid.Row className="global-card-alignment" >
-                      <Grid.Column mobile={8} largeScreen={5} >
+                      <Grid.Column mobile={16} largeScreen={5} >
                              <Card fluid >
                               <Card.Content>
                                   <p>Infected</p>
@@ -26,7 +26,7 @@ function GlobalCard(props) {
                                </Card.Content>
                              </Card>
                       </Grid.Column>
-                      <Grid.Column  mobile={8} largeScreen={5} >
+                      <Grid.Column  mobile={16} largeScreen={5} >
                       <Card fluid >
                               <Card.Content>
                                   <p>Recovered</p>
@@ -40,7 +40,7 @@ function GlobalCard(props) {
                                </Card.Content>
                              </Card>
                       </Grid.Column>
-                      <Grid.Column mobile={8} largeScreen={5} >
+                      <Grid.Column mobile={16} largeScreen={5} >
                       <Card fluid >
                               <Card.Content>
                                   <p>Death</p>

@@ -18,7 +18,7 @@ class App extends Component {
               type: 'column'
             },
             title: {
-              text: "Germany"
+              text: "Global"
             },
             plotOptions: {
               column: {
@@ -33,7 +33,7 @@ class App extends Component {
             ,
             colors: ['#77a1e5','#a6c96a','#c42525']
           },
-          Country:"Germany"
+          Country:"Global"
           // '#77a1e5'
 
     }
@@ -57,7 +57,7 @@ class App extends Component {
 
 componentDidMount(){
 
-  axios.get('https://disease.sh/v3/covid-19/countries/germany')
+  axios.get('https://disease.sh/v3/covid-19/all')
         .then((Response)=>{
              const { cases,recovered,deaths } = Response.data
              const data = [ cases,recovered,deaths]
@@ -75,7 +75,7 @@ componentDidMount(){
         <img src="https://i.ibb.co/7QpKsCX/image.png" />
         <GlobalCard data={this.state.globalchartdata.series[0].data} country={this.state.Country} />
         <Dropdown
-            placeholder='Germany'
+            placeholder='Global'
             fluid
             search
             selection
